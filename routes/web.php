@@ -21,6 +21,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('cart/store', [CartController::class, 'store'])->name('cart.store');
     Route::get('mycart', [CartController::class, 'mycart'])->name('mycart');
     Route::get('cart/delete/{id}', [CartController::class, 'delete'])->name('cart.delete');
+
+    Route::get('checkout/{cartid}', [Pagecontroller::class, 'checkout'])->name('checkout');
 });
 
 
@@ -98,6 +100,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('/banner/{id}/update', [BannerController::class, 'update'])->name('banner.update');
 
     Route::get('/banner/{id}/delete', [BannerController::class, 'delete'])->name('banner.delete');
+
+
+    // order route
+
+
 });
 
 

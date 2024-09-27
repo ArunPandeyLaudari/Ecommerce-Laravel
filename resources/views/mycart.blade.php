@@ -35,7 +35,8 @@
                     </td>
                     <td class="p-2 border border-gray-100">{{ $cart->total }}</td>
                     <td class="p-2 text-center bodered boder-gray-100">
-                        <a href="" class="px-2 py-1 text-white bg-blue-900 rounded-lg">Checkout</a>
+                        <a href="{{ route('checkout', $cart->id) }}"
+                            class="px-2 py-1 text-white bg-blue-900 rounded-lg">Checkout</a>
                         <a href="{{ route('cart.delete', $cart->id) }}"
                             class="px-2 py-1 text-white bg-red-600 rounded-lg">Remove</a>
                     </td>

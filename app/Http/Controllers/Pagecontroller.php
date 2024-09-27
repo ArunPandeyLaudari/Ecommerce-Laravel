@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cart;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -27,5 +28,24 @@ class Pagecontroller extends Controller
         $products = Product::where('category_id', $id)->where('status', 'show')->get();
 
         return view('categoryproduct', compact('products', 'category'));
+    }
+
+    // checkout page ko lagi function banako esewa ma cart id pathauna parxa so cart id pathauna parxa
+
+    public function checkout($cartid)
+    {
+
+        $cart = cart::find($cartid);
+
+        if ($cart->product->discounted_price == '') {
+            $cart->total = $cart->product->price * $cart->qty;
+        } else {
+            $cart->total = $cart->product->discounted_price * $cart->qty;
+        }
+
+        $cart->tax = $cart->total * 0.13;
+
+
+        return view('checkout', compact('cart'));
     }
 }
