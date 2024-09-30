@@ -18,6 +18,14 @@
             class="block p-4 mx-auto font-medium text-white bg-blue-600 rounded hover:bg-blue-800 ">
     </form>
 
+
+
+    <form action="{{ route('order.storecod') }}" method="post">
+        @csrf
+        <input type="hidden" name="cart_id" value="{{ cart->id }}">
+        <input type="submit" value="Cash On Delivey" class="block px-3 py-1 mx-auto text-white bg-green-600 rounded w-52">
+    </form>
+
     {{-- Yo ta garnai parxa esewa halna --}}
     @php
         $transaction_uuid = auth()->id() . '-' . time();

@@ -37,4 +37,6 @@ class OrderController extends Controller
         $cart->delete();
         return redirect()->route('homepage')->with('success', 'Order Placed Successfully');
     }
+
+    public function storecod(Request $request) {}
 }
