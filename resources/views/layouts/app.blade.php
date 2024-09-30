@@ -30,6 +30,8 @@
                 <li class="px-2 py-3 mt-5 font-medium text-center text-white bg-blue-900 rounded"><a
                         href="{{ route('product.index') }}">Product's</a></li>
                 <li class="px-2 py-3 mt-5 font-medium text-center text-white bg-blue-900 rounded"><a
+                        href="{{ route('order.index') }}">Order's</a></li>
+                <li class="px-2 py-3 mt-5 font-medium text-center text-white bg-blue-900 rounded"><a
                         href="{{ route('dashboard') }}">Users</a></li>
                 <li class="px-2 py-3 mt-5 font-medium text-center text-white bg-blue-900 rounded"><a
                         href="{{ route('banner.index') }}">Banner</a></li>

@@ -4,6 +4,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CatagoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Pagecontroller;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -23,6 +24,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('cart/delete/{id}', [CartController::class, 'delete'])->name('cart.delete');
 
     Route::get('checkout/{cartid}', [Pagecontroller::class, 'checkout'])->name('checkout');
+    Route::get('order/{cartid}/store', [OrderController::class, 'store'])->name('order.store');
 });
 
 
@@ -76,8 +78,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/product/{id}/delete', [ProductController::class, 'delete'])->name('product.delete');
 
 
+    // orders
+    Route::get('/order', [OrderController::class, 'index'])->name('order.index');
 
 
+
+    // orders end
 
     // banner route
 

@@ -23,9 +23,9 @@ class Pagecontroller extends Controller
     }
     public function categoryproduct($id)
     {
-        $category = Category::where('status', 'show')->find($id);
+        $category = Category::find($id);
 
-        $products = Product::where('category_id', $id)->where('status', 'show')->get();
+        $products = Product::where('category_id', $id)->where('status', 'Show')->get();
 
         return view('categoryproduct', compact('products', 'category'));
     }
