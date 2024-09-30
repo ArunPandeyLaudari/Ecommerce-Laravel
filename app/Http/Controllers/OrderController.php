@@ -38,5 +38,30 @@ class OrderController extends Controller
         return redirect()->route('homepage')->with('success', 'Order Placed Successfully');
     }
 
-    public function storecod(Request $request) {}
+    public function storecod(Request $request)
+    {
+
+        $cart = cart::find($request->cart_id);
+        $data = [
+            'user_id' => $cart->user_id,
+            'product_id' => $cart->product_id,
+            'qty' => $cart->qty,
+            'price' => $cart->product->price,
+            'payment_method' => 'COD',
+            'name' => $cart->user->name,
+            'phone' => '9877238238',
+            'address' => 'Kathmandu',
+        ];
+        Order::create($data);
+        $cart->delete();
+        return redirect()->route('homepage')->with('success', 'Order Placed Successfully');
+    }
+
+    public function status($id, $status)
+    {
+        $order = Order::find($id);
+        $order->status = $status;
+        $order->save();
+        return redirect()->back()->with('success', 'Order is now ' . $status);
+    }
 }

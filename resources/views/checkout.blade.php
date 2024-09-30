@@ -22,7 +22,7 @@
 
     <form action="{{ route('order.storecod') }}" method="post">
         @csrf
-        <input type="hidden" name="cart_id" value="{{ cart->id }}">
+        <input type="hidden" name="cart_id" value="{{ $cart->id }}">
         <input type="submit" value="Cash On Delivey" class="block px-3 py-1 mx-auto text-white bg-green-600 rounded w-52">
     </form>
 

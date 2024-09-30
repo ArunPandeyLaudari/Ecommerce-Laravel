@@ -25,7 +25,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('checkout/{cartid}', [Pagecontroller::class, 'checkout'])->name('checkout');
     Route::get('order/{cartid}/store', [OrderController::class, 'store'])->name('order.store');
-    Route::post('order/{cartid}/store', [OrderController::class, 'storecod'])->name('order.storecod');
+    Route::post('order/store/', [OrderController::class, 'storecod'])->name('order.storecod');
+    Route::get('order/{id}/status/{status}', [OrderController::class, 'status'])->name('order.status');
 });
 
 
