@@ -13,7 +13,7 @@
             <th class="p-2 bg-gray-200 border">Action</th>
         </tr>
 
-        // Loop through the catagories and display them in the table
+        {{-- // Loop through the catagories and display them in the table --}}
         @foreach ($catagories as $catagory)
             <tr class="text-center">
                 <td class="p-2 border">{{ $catagory->priority }}</td>

@@ -17,6 +17,9 @@ Route::get('/viewproduct/{id}', [Pagecontroller::class, 'viewproduct'])->name('v
 Route::get('/categoryproduct/{id}', [Pagecontroller::class, 'categoryproduct'])->name('categoryproduct');
 
 
+Route::get('/searchproduct', [Pagecontroller::class, 'searchproduct'])->name('searchproduct');
+
+
 
 Route::middleware(['auth'])->group(function () {
     Route::post('cart/store', [CartController::class, 'store'])->name('cart.store');

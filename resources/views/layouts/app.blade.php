@@ -17,7 +17,7 @@
 
 </head>
 
-<body class="m-1 font-sans antialiased">
+<body class="m-1 font-sans antialiased dark:bg-slate-500 ">
     @include('layouts.alert')
     <div class="flex">
         <nav class="h-screen text-blue-400 shadow-lg w-36 bg-gra">

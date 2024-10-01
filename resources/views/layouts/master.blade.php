@@ -40,9 +40,9 @@
             </button>
 
             {{-- search filed --}}
-            <form action="">
+            <form action="{{ route('searchproduct') }}" method="get">
                 <input type="search" name="search" class="px-3 py-2 border border-gray-300 rounded-lg "
-                    placeholder="SEARCH HERE">
+                    placeholder="SEARCH HERE" value="{{ request()->query('search') }}">
                 <button type="submit" class="px-4 py-2 text-white bg-yellow-600 rounded-lg">Search</button>
             </form>
 

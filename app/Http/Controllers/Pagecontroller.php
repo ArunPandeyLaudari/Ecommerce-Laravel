@@ -48,4 +48,11 @@ class Pagecontroller extends Controller
 
         return view('checkout', compact('cart'));
     }
+
+    public function searchproduct(Request $request)
+    {
+        $search = $request->search;
+        $products = Product::where('name', 'like', '%' . $search . '%')->orwhere('description', 'like', '%' . $search . '%')->get();
+        return view('searchproduct', compact('products'));
+    }
 }
